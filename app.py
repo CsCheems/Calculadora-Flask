@@ -3,15 +3,16 @@ import numpy as np
 
 app = Flask(__name__)
 
-# Ruta principal
+# Esta es la ruta principal
 @app.route('/')
 def index():
     return render_template('index.html')
 
-# Ruta para resolver ecuaciones
+# Se especifica la ruta para resolver la ecuacion
 @app.route('/calculadora', methods=['POST'])
 def calculadora():
-    data = request.json  # Obtener los datos enviados desde el frontend
+    # Aqui obtenemos los datos enviados desde el front
+    data = request.json  
     a1 = float(data['a1'])
     b1 = float(data['b1'])
     c1 = float(data['c1'])
@@ -19,16 +20,17 @@ def calculadora():
     b2 = float(data['b2'])
     c2 = float(data['c2'])
 
-    # Definir las matrices para resolver el sistema de ecuaciones
+    # Aqui se definen las matrices A: contiene los coeficientes de las variables (x, y) B: contiene las constantes
     A = np.array([[a1, b1], [a2, b2]])
     B = np.array([c1, c2])
 
+    # Utilizando la funcion linalg.solve puede resolver el sistema de ecuaciones
     try:
-        solucion = np.linalg.solve(A, B)  # Resolver el sistema
+        solucion = np.linalg.solve(A, B)
         x, y = solucion[0], solucion[1]
         resultado = {"x": round(x, 2), "y": round(y, 2)}
     except np.linalg.LinAlgError:
-        resultado = {"error": "El sistema de ecuaciones no tiene solución única"}
+        resultado = {"error": "Sin solucion"}
 
     return jsonify(resultado)
 
