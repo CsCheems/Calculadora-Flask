@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Ecuaciones Lineales</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center my-4">Calculadora de Ecuaciones Lineales (2 incógnitas)</h1>
+
+        <form class="bg-light p-4 rounded" onsubmit="solveEquations(event)">
+            <h3>Ecuación 1:</h3>
+            <div class="form-group">
+                <label for="a1">a1:</label>
+                <input type="text" class="form-control" id="a1" placeholder="Coeficiente de x" required>
+            </div>
+            <div class="form-group">
+                <label for="b1">b1:</label>
+                <input type="text" class="form-control" id="b1" placeholder="Coeficiente de y" required>
+            </div>
+            <div class="form-group">
+                <label for="c1">c1:</label>
+                <input type="text" class="form-control" id="c1" placeholder="Resultado" required>
+            </div>
+
+            <h3>Ecuación 2:</h3>
+            <div class="form-group">
+                <label for="a2">a2:</label>
+                <input type="text" class="form-control" id="a2" placeholder="Coeficiente de x" required>
+            </div>
+            <div class="form-group">
+                <label for="b2">b2:</label>
+                <input type="text" class="form-control" id="b2" placeholder="Coeficiente de y" required>
+            </div>
+            <div class="form-group">
+                <label for="c2">c2:</label>
+                <input type="text" class="form-control" id="c2" placeholder="Resultado" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Resolver</button>
+        </form>
+
+        <h2 id="result" class="text-center mt-4"></h2>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
