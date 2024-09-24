@@ -48,7 +48,7 @@ def calculadora():
         procedimiento = f"**Paso 1:** Matriz de coeficientes (A):<br>{A}<br><br>" \
                         f"**Paso 2:** Determinante de A (Delta): {Delta}<br>" \
                         f"Para calcular el determinante de una matriz \( 2 x 2 \):<br>" \
-                        f"\\[ \\Delta = a_{11} \\cdot a_{22} - a_{12} \\cdot a_{21} \\]<br>" \
+                        f"\\[ \\Delta = a \\cdot d - b \\cdot c \\]<br>" \
                         f"Aplicamos a nuestra matriz:<br>" \
                         f"\\[ \\Delta = {a1} \\cdot {b2} - {b1} \\cdot {a2} = {Delta} \\]<br><br>" \
                         f"**Paso 3:** Matriz modificada para Delta_x:<br>{A_x}<br>" \
