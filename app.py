@@ -54,7 +54,7 @@ def calculadora():
                         f"**Paso 3:** Matriz modificada para Delta_x:<br>{A_x}<br>" \
                         f"Aplicamos a nuestra matriz:<br>" \
                         f"\\[ \\Delta_x = {c1} \\cdot {b2} - {b1} \\cdot {c2} = {Delta_x} \\]<br><br>" \
-                        f"\\[ \\Delta_y = {Delta_x}\\]<br><br>" \
+                        f"\\[ \\Delta_x = {Delta_x}\\]<br><br>" \
                         f"**Paso 4:** Matriz modificada para Delta_y:<br>{A_y}<br>" \
                         f"Aplicamos a nuestra matriz:<br>" \
                         f"\\[ \\Delta_y = {a1} \\cdot {c2} - {a2} \\cdot {c1} = {Delta_y} \\]<br><br>" \
